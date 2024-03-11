@@ -16,18 +16,6 @@ class _HomePageState extends ConsumerState<HomePage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-      AppBar(
-        centerTitle: false,
-        backgroundColor: const Color.fromRGBO(99, 7, 181, 1),
-        title: const Text('Product info',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
       body: Consumer(
         builder: (context, ref, _) {
           ref.watch(homeCont);

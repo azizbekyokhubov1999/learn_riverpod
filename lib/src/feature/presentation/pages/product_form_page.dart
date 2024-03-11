@@ -15,18 +15,6 @@ class _ProductFormState extends ConsumerState<ProductForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: const Color.fromRGBO(99, 7, 181, 1),
-        title: const Text(
-          'Product form',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
       body: Consumer(
         builder: (context, ref, _) {
           ref.watch(productFormCont);
@@ -190,7 +178,8 @@ class _ProductFormState extends ConsumerState<ProductForm> {
                     child: MaterialButton(
                       onPressed: () async {
                         await ref.read(productFormCont).create().then((value) {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
+
                         });
                       },
                       padding: const EdgeInsets.all(15),

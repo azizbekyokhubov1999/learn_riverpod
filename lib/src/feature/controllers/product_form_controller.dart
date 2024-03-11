@@ -33,6 +33,7 @@ class ProductFormController extends ChangeNotifier{
     } else {
       log("Failed to add product");
     }
+    notifyListeners();
   }
 
   Future<void> readPosts() async{
@@ -41,9 +42,10 @@ class ProductFormController extends ChangeNotifier{
   }
 
   ProductFormController(){
+    log("message");
     readPosts().then((value) {
       isLoading = true;
-      notifyListeners();
+      // notifyListeners();
     });
   }
 }
